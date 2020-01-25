@@ -3,19 +3,40 @@
 
 public class Recursividad {
     
-    void CapturarString(){
+    private String CapturarString(){
      
+       String LaHilera = "Hello world";
+       return LaHilera;
        
         
     }
-     void ImprimirDerechaIzquierda(){
-         
+    private int LargoHilera(String Hilera){
+        int Largo =Hilera.length();
+        return Largo;
+        
+    }
+     private void ImprimirDerechaIzquierda(String Hilera,  int Largo){
+         ImprimirRecursivo(Hilera,0,Largo);
      }    
-     void ImprimirRecursivo(){
-         
+      private void ImprimirRecursivo(String Hilera, int Posicion, int Largo){
+          
+     if (Posicion==Largo){
+         ImporimirCaracter(Hilera,Posicion);
+
+          }    
+     else
+     {
+         ImprimirRecursivo(Hilera,Posicion+1,Largo);
+           ImporimirCaracter(Hilera,Posicion);
      }
-     void EjecutarEjemploUno(){
-        CapturarString ();
-         ImprimirDerechaIzquierda();
      }
+     public void EjecutarEjemploUno(){
+        String LaHilera =CapturarString ();
+        int Largo =LargoHilera(LaHilera);
+         ImprimirDerechaIzquierda(LaHilera,Largo);
+     }
+
+    private void ImporimirCaracter(String Hilera,int Posicion) {
+         System.out.print(Hilera.charAt(Posicion));
+    }
 }
