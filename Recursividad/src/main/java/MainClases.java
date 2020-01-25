@@ -1,7 +1,7 @@
 
 public class MainClases {
 
-     private static void DoJob() {
+     public static void DoJob() {
 
         Recursividad ejemploRecursivo = 
                 new Recursividad ();
